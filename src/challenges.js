@@ -51,20 +51,24 @@ console.log(footballPoints(0, 0));
 
 // Desafio 6 XXXXXXXX---------------------------------------------------------------------------------------------------------------------
 function highestCount(arrayMaior) {
-  let maior = Math.max.apply(null, arrayMaior);
+  for (let index = 0; index < arrayMaior.length; index += 1) {
+    let maior = arrayMaior[Math.max.apply(null, arrayMaior)];
 
-  return maior
+  }
+  return maior;
 }
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
 // Desafio 7 ----------------------------------------------------------------------------------------------------------------------------
 function catAndMouse(mouse, cat1, cat2) {
-   mouse = 0;
-  if ((cat2 - mouse) < (cat1 - mouse)) {
+  let GatoUmRato = Math.abs(cat1 - mouse);
+  let GatoDoisRato = Math.abs(cat2 - mouse);
+
+  if (GatoDoisRato < GatoUmRato) {
     return 'cat2';
-  } else if ((cat1 - mouse) < (cat2 - mouse)) {
+  } else if (GatoUmRato < GatoDoisRato) {
     return 'cat1';
-  } else if ((cat1 - mouse) === (cat2 - mouse)){
+  } else if (GatoUmRato === GatoDoisRato) {
     return 'os gatos trombam e o rato foge';
   }
 }
@@ -73,9 +77,22 @@ console.log(catAndMouse(0, 6, 12));
 console.log(catAndMouse(4, 3, 5));
 
 // Desafio 8 ----------------------------------------------------------------------------------------------------------------------------
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(array) {
+  let palavras = [];
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index] / 3 % 0) {
+      palavras.push('fizz');
+    } else if (array[index] / 5 % 0) {
+      palavras.push('buzz')
+    } else if (array[index] / 3 % 0 && array[index] / 5 % 0) {
+      palavras.push('fizzBuzz')
+    } else {
+      palavras.push('bug!')
+    }
+  }
+  return palavras;
 }
+console.log(fizzBuzz[2, 15, 7, 9, 45])
 
 // Desafio 9 ----------------------------------------------------------------------------------------------------------------------------
 function encode() {
