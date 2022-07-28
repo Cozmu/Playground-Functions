@@ -51,11 +51,18 @@ console.log(footballPoints(0, 0));
 
 // Desafio 6 XXXXXXXX---------------------------------------------------------------------------------------------------------------------
 function highestCount(arrayMaior) {
+  let maior = arrayMaior[0];
+  let resultado = 0;
   for (let index = 0; index < arrayMaior.length; index += 1) {
-    let maior = arrayMaior[Math.max.apply(null, arrayMaior)];
-
+    if (arrayMaior[index] > maior) {
+      maior = arrayMaior[index];
+    }
   }
-  return maior;
+  for (let index = 0; index < array.length; index++) {
+    resultado += array[index];
+    
+  }
+  return resultado;
 }
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
 
@@ -80,19 +87,22 @@ console.log(catAndMouse(4, 3, 5));
 function fizzBuzz(array) {
   let palavras = [];
   for (let index = 0; index < array.length; index += 1) {
-    if (array[index] / 3 % 0) {
+    let divisivelPorTres = array[index] % 3 === 0;
+    let divisivelPorCinco = array[index] % 5 === 0;
+    let diviTresECinco = array[index] % 3 === 0 && array[index] % 5 === 0;
+    if (divisivelPorTres) {
       palavras.push('fizz');
-    } else if (array[index] / 5 % 0) {
-      palavras.push('buzz')
-    } else if (array[index] / 3 % 0 && array[index] / 5 % 0) {
+    } else if (divisivelPorCinco) {
+      palavras.push('buzz');
+    } else if (diviTresECinco) {
       palavras.push('fizzBuzz')
     } else {
-      palavras.push('bug!')
+      palavras.push('bug!');
     }
   }
   return palavras;
 }
-console.log(fizzBuzz[2, 15, 7, 9, 45])
+console.log(fizzBuzz([2, 15, 7, 9, 45]))
 
 // Desafio 9 ----------------------------------------------------------------------------------------------------------------------------
 function encode() {
