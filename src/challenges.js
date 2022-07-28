@@ -53,18 +53,24 @@ console.log(footballPoints(0, 0));
 function highestCount(arrayMaior) {
   let maior = arrayMaior[0];
   let resultado = 0;
-  for (let index = 0; index < arrayMaior.length; index += 1) {
+  for (let index = 1; index < arrayMaior.length; index += 1) {
     if (arrayMaior[index] > maior) {
       maior = arrayMaior[index];
     }
+
   }
-  for (let index = 0; index < array.length; index++) {
-    resultado += array[index];
-    
+  for (let index = 0; index < arrayMaior.length; index += 1) {
+    if (arrayMaior[index] === maior) {
+      resultado += 1;
+    }
+
   }
   return resultado;
 }
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
+console.log(highestCount([0, 4, 4, 4, 9, 2, 1]));
+console.log(highestCount([0, 0, 0]));
+
 
 // Desafio 7 ----------------------------------------------------------------------------------------------------------------------------
 function catAndMouse(mouse, cat1, cat2) {
@@ -87,22 +93,26 @@ console.log(catAndMouse(4, 3, 5));
 function fizzBuzz(array) {
   let palavras = [];
   for (let index = 0; index < array.length; index += 1) {
-    let divisivelPorTres = array[index] % 3 === 0;
-    let divisivelPorCinco = array[index] % 5 === 0;
-    let diviTresECinco = array[index] % 3 === 0 && array[index] % 5 === 0;
-    if (divisivelPorTres) {
+    let Tres = array[index] % 3 === 0;
+    let Cinco = array[index] % 5 === 0;
+    let TresECinco = array[index] % 3 === 0 && array[index] % 5 === 0;
+
+    if (TresECinco) {
+      palavras.push('fizzBuzz');
+    } else if (Tres) {
       palavras.push('fizz');
-    } else if (divisivelPorCinco) {
+    } else if (Cinco) {
       palavras.push('buzz');
-    } else if (diviTresECinco) {
-      palavras.push('fizzBuzz')
-    } else {
+    } else{
       palavras.push('bug!');
     }
+
   }
   return palavras;
 }
 console.log(fizzBuzz([2, 15, 7, 9, 45]))
+console.log(fizzBuzz([7, 9]))
+console.log(fizzBuzz([9, 25]));
 
 // Desafio 9 ----------------------------------------------------------------------------------------------------------------------------
 function encode() {
