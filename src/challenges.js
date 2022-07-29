@@ -124,25 +124,21 @@ function encode(palavra) {
     let igualO = palavra[index] === 'o';
     let igualU = palavra[index] === 'u';
     let muda = palavra[index];
+
     if (igualA) {
-      muda.replace(/a/gi, '1');
-      resultado += palavra[index];
+      resultado += muda.replace(/a/gi, '1');
 
     } else if (igualE) {
-      muda.replace(/e/gi, '2');
-      resultado += palavra[index];
+      resultado += muda.replace(/e/gi, '2');
 
     } else if (igualI) {
-      muda.replace(/i/gi, '3');
-      resultado += palavra[index];
+      resultado += muda.replace(/i/gi, '3');
 
     } else if (igualO) {
-      muda.replace(/o/gi, '4');
-      resultado += palavra[index];
+      resultado += muda.replace(/o/gi, '4');
 
     } else if (igualU) {
-      muda.replace(/u/gi, '5');
-      resultado += palavra[index];
+      resultado += muda.replace(/u/gi, '5');
 
     } else {
       resultado += palavra[index];
@@ -151,20 +147,38 @@ function encode(palavra) {
   return resultado;
 }
 
-console.log(encode('macaco'));
+function decode(palavra) {
+  let resultado = '';
+  for (let index = 0; index < palavra.length; index += 1) {
+    let igualA = palavra[index] === '1';
+    let igualE = palavra[index] === '2';
+    let igualI = palavra[index] === '3';
+    let igualO = palavra[index] === '4';
+    let igualU = palavra[index] === '5';
+    let muda = palavra[index];
 
-let a = 'Safada e o nome da safada da tua mae a a a a a ';
-a.replace(/a/gi, 'e');
-console.log(a);
-/* let primeira =  frase.replace(/1/gi, 'a');
-  let segunda = frase.replace(/2/gi, 'e');
-  let terceira = frase.replace(/3/gi, 'i');
-  let quarta = frase.replace(/4/gi, 'o');
-  let quinta = frase.replace(/5/gi, 'u'); */
+    if (igualA) {
+      resultado += muda.replace(/1/gi, 'a');
 
-function decode() {
-  // seu código aqui
+    } else if (igualE) {
+      resultado += muda.replace(/2/gi, 'e');
+
+    } else if (igualI) {
+      resultado += muda.replace(/3/gi, 'i');
+
+    } else if (igualO) {
+      resultado += muda.replace(/4/gi, 'o');
+
+    } else if (igualU) {
+      resultado += muda.replace(/5/gi, 'u');
+
+    } else {
+      resultado += palavra[index];
+    }
+  }
+  return resultado;
 }
+console.log(decode('g4 Tryb2!'));
 
 // Desafio 10 ----------------------------------------------------------------------------------------------------------------------------
 function techList() {
