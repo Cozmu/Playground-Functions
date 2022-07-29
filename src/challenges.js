@@ -49,7 +49,7 @@ console.log(footballPoints(14, 8));
 console.log(footballPoints(1, 2));
 console.log(footballPoints(0, 0));
 
-// Desafio 6 XXXXXXXX---------------------------------------------------------------------------------------------------------------------
+// Desafio 6 ----------------------------------------------------------------------------------------------------------------------------
 function highestCount(arrayMaior) {
   let maior = arrayMaior[0];
   let resultado = 0;
@@ -103,7 +103,7 @@ function fizzBuzz(array) {
       palavras.push('fizz');
     } else if (Cinco) {
       palavras.push('buzz');
-    } else{
+    } else {
       palavras.push('bug!');
     }
 
@@ -115,9 +115,53 @@ console.log(fizzBuzz([7, 9]))
 console.log(fizzBuzz([9, 25]));
 
 // Desafio 9 ----------------------------------------------------------------------------------------------------------------------------
-function encode() {
-  // seu código aqui
+function encode(palavra) {
+  let resultado = '';
+  for (let index = 0; index < palavra.length; index += 1) {
+    let igualA = palavra[index] === 'a';
+    let igualE = palavra[index] === 'e';
+    let igualI = palavra[index] === 'i';
+    let igualO = palavra[index] === 'o';
+    let igualU = palavra[index] === 'u';
+    let muda = palavra[index];
+    if (igualA) {
+      muda.replace(/a/gi, '1');
+      resultado += palavra[index];
+
+    } else if (igualE) {
+      muda.replace(/e/gi, '2');
+      resultado += palavra[index];
+
+    } else if (igualI) {
+      muda.replace(/i/gi, '3');
+      resultado += palavra[index];
+
+    } else if (igualO) {
+      muda.replace(/o/gi, '4');
+      resultado += palavra[index];
+
+    } else if (igualU) {
+      muda.replace(/u/gi, '5');
+      resultado += palavra[index];
+
+    } else {
+      resultado += palavra[index];
+    }
+  }
+  return resultado;
 }
+
+console.log(encode('macaco'));
+
+let a = 'Safada e o nome da safada da tua mae a a a a a ';
+a.replace(/a/gi, 'e');
+console.log(a);
+/* let primeira =  frase.replace(/1/gi, 'a');
+  let segunda = frase.replace(/2/gi, 'e');
+  let terceira = frase.replace(/3/gi, 'i');
+  let quarta = frase.replace(/4/gi, 'o');
+  let quinta = frase.replace(/5/gi, 'u'); */
+
 function decode() {
   // seu código aqui
 }
