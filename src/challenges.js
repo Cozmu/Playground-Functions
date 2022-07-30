@@ -9,8 +9,6 @@ function compareTrue(macaco, banana) {
   }
 }
 console.log(compareTrue(true, true));
-console.log(compareTrue(false, true));
-console.log(compareTrue(false, false));
 
 // Desafio 2 ----------------------------------------------------------------------------------------------------------------------------
 function calcArea(base, height) {
@@ -18,8 +16,6 @@ function calcArea(base, height) {
   return calculo;
 }
 console.log(calcArea(10, 50));
-console.log(calcArea(5, 2));
-console.log(calcArea(51, 1));
 
 // Desafio 3 ----------------------------------------------------------------------------------------------------------------------------
 function splitSentence(frase) {
@@ -28,17 +24,13 @@ function splitSentence(frase) {
   return array;
 }
 console.log(splitSentence('Go Trybe'));
-console.log(splitSentence('Vamo que Vamo'));
-console.log(splitSentence('Foguete'));
 
 // Desafio 4 ----------------------------------------------------------------------------------------------------------------------------
 function concatName(array) {
   let concatenacao = array[array.length - 1] + ', ' + array[0];
   return concatenacao;
 }
-console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']))
-console.log(concatName(['foguete', 'não', 'tem', 'ré']));
-console.log(concatName(['captain', 'my', 'captain']));
+console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
 // Desafio 5 ----------------------------------------------------------------------------------------------------------------------------
 function footballPoints(wins, ties) {
@@ -46,8 +38,6 @@ function footballPoints(wins, ties) {
   return pontuacao;
 }
 console.log(footballPoints(14, 8));
-console.log(footballPoints(1, 2));
-console.log(footballPoints(0, 0));
 
 // Desafio 6 ----------------------------------------------------------------------------------------------------------------------------
 function highestCount(arrayMaior) {
@@ -68,9 +58,6 @@ function highestCount(arrayMaior) {
   return resultado;
 }
 console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
-console.log(highestCount([0, 4, 4, 4, 9, 2, 1]));
-console.log(highestCount([0, 0, 0]));
-
 
 // Desafio 7 ----------------------------------------------------------------------------------------------------------------------------
 function catAndMouse(mouse, cat1, cat2) {
@@ -86,8 +73,6 @@ function catAndMouse(mouse, cat1, cat2) {
   }
 }
 console.log(catAndMouse(10, 3, 2));
-console.log(catAndMouse(0, 6, 12));
-console.log(catAndMouse(4, 3, 5));
 
 // Desafio 8 ----------------------------------------------------------------------------------------------------------------------------
 function fizzBuzz(array) {
@@ -111,8 +96,6 @@ function fizzBuzz(array) {
   return palavras;
 }
 console.log(fizzBuzz([2, 15, 7, 9, 45]))
-console.log(fizzBuzz([7, 9]))
-console.log(fizzBuzz([9, 25]));
 
 // Desafio 9 ----------------------------------------------------------------------------------------------------------------------------
 function encode(palavra) {
@@ -146,6 +129,7 @@ function encode(palavra) {
   }
   return resultado;
 }
+console.log(encode('h3 th2r2!'));
 
 function decode(palavra) {
   let resultado = '';
@@ -181,9 +165,24 @@ function decode(palavra) {
 console.log(decode('g4 Tryb2!'));
 
 // Desafio 10 ----------------------------------------------------------------------------------------------------------------------------
-function techList() {
-  // seu código aqui
+function techList(tec, pessoa) {
+  let array = [];
+  for (let index = 0; index < tec.length; index += 1) {
+    let tecnologia = tec[index];
+    let erro = 'Vazio!';
+    if (tecnologia === tec[index]) {
+      let t = {
+        tech: tecnologia,
+        name: pessoa
+      }
+      array.push(t);
+    } else {
+      return erro;
+    }
+  }
+  return array;
 }
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'))
 
 module.exports = {
   calcArea,
