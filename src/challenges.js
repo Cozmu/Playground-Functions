@@ -177,7 +177,7 @@ function techList(tec, pessoa) {
     array.push(t);
   }
 
-  if ( ) {
+  if (condition) {
     return array;
   } else {
     return erro;
