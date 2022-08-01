@@ -168,23 +168,27 @@ console.log(decode('g4 Tryb2!'));
 function techList(tec, pessoa) {
   let array = [];
   let erro = 'Vazio!';
-  for (let index = 0; index < tec.length; index += 1) {
-    let tecnologia = tec[index];
+  let alfabetica = tec.sort();
+
+  for (let index = 0; index < alfabetica.length; index += 1) {
+    let tecnologia = alfabetica[index];
     let t = {
       tech: tecnologia,
       name: pessoa
     }
     array.push(t);
+
   }
 
-  if (condition) {
-    return array;
-  } else {
+  if (tec.length === 0) {
     return erro;
+  } else {
+    return array;
   }
 
 }
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'))
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
+console.log(techList([], 'Lucas'));
 
 module.exports = {
   calcArea,
