@@ -30,5 +30,5 @@
 
 ##  Autor
 
-### <a href="https://www.linkedin.com/in/jorge-reis-dev/" ><b>Jorge Wellington.</b></a>
+### <a href="https://www.linkedin.com/in/jorge-reis-dev/" ><b>Jorge Wellington</b></a>
 <a href="https://www.linkedin.com/in/jorge-reis-dev/" ></a>
