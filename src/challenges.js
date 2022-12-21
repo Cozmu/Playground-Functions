@@ -142,13 +142,11 @@ console.log(decode('g4 Tryb2!'));
 
 // Desafio 10 ----------------------------------------------------------------------------------------------------------------------------
 function techList(tec, pessoa) {
-  const erro = 'Vazio!';
   const alfabetica = tec.sort();
   if (tec.length === 0) {
-    return erro;
+    return 'Vazio!';
   }
-  const result = alfabetica.map((e) => ({ tech: e, name: pessoa }));
-  return result;
+  return alfabetica.map((e) => ({ tech: e, name: pessoa }));
 }
 console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 console.log(techList([], 'Lucas'));
