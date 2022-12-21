@@ -88,58 +88,54 @@ function fizzBuzz(array) {
 console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9 ----------------------------------------------------------------------------------------------------------------------------
+const handleFunction = (caractere) => {
+  if (caractere === 'u') {
+    return '5';
+  }
+  if (caractere === '5') {
+    return 'u';
+  }
+  return '';
+};
+
 function encode(palavra) {
   let resultado = '';
-  for (let index = 0; index < palavra.length; index += 1) {
-    let igualA = palavra[index] === 'a';
-    let igualE = palavra[index] === 'e';
-    let igualI = palavra[index] === 'i';
-    let igualO = palavra[index] === 'o';
-    let igualU = palavra[index] === 'u';
-    let muda = palavra[index];
-
-    if (igualA) {
-      resultado += muda.replace(/a/gi, '1');
-    } else if (igualE) {
-      resultado += muda.replace(/e/gi, '2');
-    } else if (igualI) {
-      resultado += muda.replace(/i/gi, '3');
-    } else if (igualO) {
-      resultado += muda.replace(/o/gi, '4');
-    } else if (igualU) {
-      resultado += muda.replace(/u/gi, '5');
+  const arr = palavra.split('');
+  arr.forEach((e) => {
+    if (e === 'a') {
+      resultado += e.replace(e, '1');
+    } else if (e === 'e') {
+      resultado += e.replace(e, '2');
+    } else if (e === 'i') {
+      resultado += e.replace(e, '3');
+    } else if (e === 'o') {
+      resultado += e.replace(e, '4');
     } else {
-      resultado += palavra[index];
+      resultado += handleFunction(e);
+      resultado += e;
     }
-  }
+  });
   return resultado;
 }
 console.log(encode('h3 th2r2!'));
 
 function decode(palavra) {
   let resultado = '';
-  for (let index = 0; index < palavra.length; index += 1) {
-    let igualA = palavra[index] === '1';
-    let igualE = palavra[index] === '2';
-    let igualI = palavra[index] === '3';
-    let igualO = palavra[index] === '4';
-    let igualU = palavra[index] === '5';
-    let muda = palavra[index];
-
-    if (igualA) {
-      resultado += muda.replace(/1/gi, 'a');
-    } else if (igualE) {
-      resultado += muda.replace(/2/gi, 'e');
-    } else if (igualI) {
-      resultado += muda.replace(/3/gi, 'i');
-    } else if (igualO) {
-      resultado += muda.replace(/4/gi, 'o');
-    } else if (igualU) {
-      resultado += muda.replace(/5/gi, 'u');
+  const arr = palavra.split('');
+  arr.forEach((e) => {
+    if (e === '1') {
+      resultado += e.replace(e, 'a');
+    } else if (e === '2') {
+      resultado += e.replace(e, 'e');
+    } else if (e === '3') {
+      resultado += e.replace(e, 'i');
+    } else if (e === '4') {
+      resultado += e.replace(e, 'o');
     } else {
-      resultado += palavra[index];
+      resultado += handleFunction(e);
+      resultado += e;
     }
-  }
+  });
   return resultado;
 }
 console.log(decode('g4 Tryb2!'));
