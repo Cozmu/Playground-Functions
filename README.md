@@ -2,13 +2,13 @@
 
 #### Esse projeto tem como objetivo colocar meus aprendizados em Java Script Vanilla em prática. Usei de funções simples, manipulação de arrays, objetos e estruturas de repetição para solucionar problemas hipóteticos.
 
-## Tecnologias :
+## Tecnologias:
 
 <ul>
   <li>Java Script Vanilla</li>
 </ul>
 
-## Como executar :
+## Como executar:
 
 <ul>
   <li>Clone em seu computador (via SHH).</li>    
@@ -22,13 +22,13 @@
   4. Envie as suas alterações: `git push origin my-feature`;
   5. Abra o seu pull-request na página do GitHub.<br><br>
 
-## Licença :
+## Licença:
 
  Esse projeto está sob a licença : 
  
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-##  Autor :
+##  Autor:
 
 ### <a href="https://www.linkedin.com/in/jorge-reis-dev/" ><b>Jorge Wellington</b></a>
 <a href="https://www.linkedin.com/in/jorge-reis-dev/" ></a>
