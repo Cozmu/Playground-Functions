@@ -2,11 +2,10 @@
 function compareTrue(macaco, banana) {
   if (macaco && banana === true) {
     return true;
-  } else if (macaco && banana === false) {
-    return false;
-  } else {
+  } if (macaco && banana === false) {
     return false;
   }
+  return false;
 }
 console.log(compareTrue(true, true));
 
@@ -27,14 +26,14 @@ console.log(splitSentence('Go Trybe'));
 
 // Desafio 4 ----------------------------------------------------------------------------------------------------------------------------
 function concatName(array) {
-  let concatenacao = array[array.length - 1] + ', ' + array[0];
+  let concatenacao = `${array[array.length - 1]}, ${array[0]}`;
   return concatenacao;
 }
 console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
 
 // Desafio 5 ----------------------------------------------------------------------------------------------------------------------------
 function footballPoints(wins, ties) {
-  let pontuacao = (wins * 3) + (ties)
+  let pontuacao = (wins * 3) + (ties);
   return pontuacao;
 }
 console.log(footballPoints(14, 8));
@@ -43,21 +42,17 @@ console.log(footballPoints(14, 8));
 function highestCount(arrayMaior) {
   let maior = arrayMaior[0];
   let resultado = 0;
-  for (let index = 1; index < arrayMaior.length; index += 1) {
+  for (let index = 0; index < arrayMaior.length; index += 1) {
     if (arrayMaior[index] > maior) {
       maior = arrayMaior[index];
     }
-
-  }
-  for (let index = 0; index < arrayMaior.length; index += 1) {
     if (arrayMaior[index] === maior) {
       resultado += 1;
     }
-
   }
   return resultado;
 }
-console.log(highestCount([9, 1, 2, 3, 9, 5, 7]));
+console.log(highestCount([9, 1, 9, 3, 9, 5, 7]));
 
 // Desafio 7 ----------------------------------------------------------------------------------------------------------------------------
 function catAndMouse(mouse, cat1, cat2) {
@@ -66,9 +61,9 @@ function catAndMouse(mouse, cat1, cat2) {
 
   if (GatoDoisRato < GatoUmRato) {
     return 'cat2';
-  } else if (GatoUmRato < GatoDoisRato) {
+  } if (GatoUmRato < GatoDoisRato) {
     return 'cat1';
-  } else if (GatoUmRato === GatoDoisRato) {
+  } if (GatoUmRato === GatoDoisRato) {
     return 'os gatos trombam e o rato foge';
   }
 }
@@ -76,26 +71,21 @@ console.log(catAndMouse(10, 3, 2));
 
 // Desafio 8 ----------------------------------------------------------------------------------------------------------------------------
 function fizzBuzz(array) {
-  let palavras = [];
-  for (let index = 0; index < array.length; index += 1) {
-    let Tres = array[index] % 3 === 0;
-    let Cinco = array[index] % 5 === 0;
-    let TresECinco = array[index] % 3 === 0 && array[index] % 5 === 0;
-
-    if (TresECinco) {
+  const palavras = [];
+  array.forEach((element) => {
+    if (element % 3 === 0 && element % 5 === 0) {
       palavras.push('fizzBuzz');
-    } else if (Tres) {
+    } else if (element % 3 === 0) {
       palavras.push('fizz');
-    } else if (Cinco) {
+    } else if (element % 5 === 0) {
       palavras.push('buzz');
     } else {
       palavras.push('bug!');
     }
-
-  }
+  });
   return palavras;
 }
-console.log(fizzBuzz([2, 15, 7, 9, 45]))
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9 ----------------------------------------------------------------------------------------------------------------------------
 function encode(palavra) {
@@ -110,19 +100,14 @@ function encode(palavra) {
 
     if (igualA) {
       resultado += muda.replace(/a/gi, '1');
-
     } else if (igualE) {
       resultado += muda.replace(/e/gi, '2');
-
     } else if (igualI) {
       resultado += muda.replace(/i/gi, '3');
-
     } else if (igualO) {
       resultado += muda.replace(/o/gi, '4');
-
     } else if (igualU) {
       resultado += muda.replace(/u/gi, '5');
-
     } else {
       resultado += palavra[index];
     }
@@ -143,19 +128,14 @@ function decode(palavra) {
 
     if (igualA) {
       resultado += muda.replace(/1/gi, 'a');
-
     } else if (igualE) {
       resultado += muda.replace(/2/gi, 'e');
-
     } else if (igualI) {
       resultado += muda.replace(/3/gi, 'i');
-
     } else if (igualO) {
       resultado += muda.replace(/4/gi, 'o');
-
     } else if (igualU) {
       resultado += muda.replace(/5/gi, 'u');
-
     } else {
       resultado += palavra[index];
     }
@@ -174,18 +154,15 @@ function techList(tec, pessoa) {
     let tecnologia = alfabetica[index];
     let t = {
       tech: tecnologia,
-      name: pessoa
-    }
+      name: pessoa,
+    };
     array.push(t);
-
   }
 
   if (tec.length === 0) {
     return erro;
-  } else {
-    return array;
   }
-
+  return array;
 }
 console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 console.log(techList([], 'Lucas'));
