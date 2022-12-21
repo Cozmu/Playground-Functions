@@ -103,13 +103,13 @@ function encode(palavra) {
   const arr = palavra.split('');
   arr.forEach((e) => {
     if (e === 'a') {
-      resultado += e.replace(e, '1');
+      resultado += '1';
     } else if (e === 'e') {
-      resultado += e.replace(e, '2');
+      resultado += '2';
     } else if (e === 'i') {
-      resultado += e.replace(e, '3');
+      resultado += '3';
     } else if (e === 'o') {
-      resultado += e.replace(e, '4');
+      resultado += '4';
     } else {
       resultado += handleFunction(e);
       resultado += e;
@@ -124,13 +124,13 @@ function decode(palavra) {
   const arr = palavra.split('');
   arr.forEach((e) => {
     if (e === '1') {
-      resultado += e.replace(e, 'a');
+      resultado += 'a';
     } else if (e === '2') {
-      resultado += e.replace(e, 'e');
+      resultado += 'e';
     } else if (e === '3') {
-      resultado += e.replace(e, 'i');
+      resultado += 'i';
     } else if (e === '4') {
-      resultado += e.replace(e, 'o');
+      resultado += 'o';
     } else {
       resultado += handleFunction(e);
       resultado += e;
